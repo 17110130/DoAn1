@@ -1,0 +1,9 @@
+MYDATABASE
+Comment So Luong Field: 2, So Luong Mau Tin: 3
+Comment Ten Field Start Width DatType: I: SoNguyen, C: Char, F: So thuc, B: Bool, D: Ngay
+2
+MaLoaiNuoc       1         8        C
+DienGiai         9         20       C
+N       Nuoc gia khat
+S       Sinh to
+T       Tra sua     

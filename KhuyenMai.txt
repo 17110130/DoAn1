@@ -1,0 +1,11 @@
+MYDATABASE
+Comment So Luong Field: 3, So Luong Mau Tin: 3
+Comment Ten Field Start Width DatType: I: SoNguyen, C: Char, F: So thuc, B: Bool, D: Ngay
+3
+Loai Khuyen Mai    1           3          I
+DienGiai           4          40          C
+TinhTien           44         20          F
+2
+1  Khong co chuong trinh khuyen mai        Giagoc          
+2  Chuong trinh khuyen mai 1               80%*Giagoc          
+3  Chuong trinh khuyen mai 2               60%*Giagoc          

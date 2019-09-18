@@ -1,0 +1,34 @@
+MYDATABASE
+Comment So Luong Field: 4, So Luong Mau Tin: 25
+Comment Ten Field Start Width DatType: I: SoNguyen, C: Char, F: So thuc, B: Bool, D: Ngay
+Comment STT: So thu tu
+4
+STT 		1	7	I
+Ten do uong	8	23	C
+Loai nuoc	31	2	I
+Khuyen mai	33	2	I
+1      String                 N 0
+2      Red Bull               N 0
+3      Coca                   N 0
+4      Pepsi                  N 0
+5      7up                    N 0
+6      Tra xanh khong do      N 0
+7      Dr Thanh               N 0 
+8      Number 1               N 0
+9      Nuoc yen               N 0
+10     Nutriboost             N 0   
+11     Sinh to bo             S 0
+12     Sinh to mang cau       S 0
+13     Sinh to Sabo           S 0
+14     Sinh to xoai           S 0
+15     Sinh to dua            S 0
+16     Tra sua Socola         T 1
+17     Tra sua truyen thong   T 2
+18     Tra sua Cacao          T 1
+19     Tra sua matcha         T 1
+20     Tra sua Oreo kem       T 1
+21     Tra dao                T 3
+22     Capuchino              T 3
+23     Coffee den             N 0
+24     Coffee sua             N 0
+25     Dua trai               N 0
