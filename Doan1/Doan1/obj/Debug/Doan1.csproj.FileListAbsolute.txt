@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\Doan1\Doan1\bin\Debug\Doan1.exe.config
+C:\Users\Admin\source\repos\Doan1\Doan1\bin\Debug\Doan1.exe
+C:\Users\Admin\source\repos\Doan1\Doan1\bin\Debug\Doan1.pdb
+C:\Users\Admin\source\repos\Doan1\Doan1\obj\Debug\Doan1.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Doan1\Doan1\obj\Debug\Doan1.Form1.resources
+C:\Users\Admin\source\repos\Doan1\Doan1\obj\Debug\Doan1.Properties.Resources.resources
+C:\Users\Admin\source\repos\Doan1\Doan1\obj\Debug\Doan1.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Doan1\Doan1\obj\Debug\Doan1.exe
+C:\Users\Admin\source\repos\Doan1\Doan1\obj\Debug\Doan1.pdb
+C:\Users\Admin\source\repos\Doan1\Doan1\obj\Debug\Doan1.Form2.resources
