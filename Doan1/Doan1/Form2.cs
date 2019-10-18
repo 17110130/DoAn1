@@ -20,7 +20,7 @@ namespace Doan1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"C:\Users\Admin\source\repos\Doan1\Doan1\bin\Debug\dsnuoc.txt",FileMode.Open);
+            FileStream fs = new FileStream(@"C:\Users\Admin\Desktop\DA1\DoAn1\Doan1\Doan1\bin\Debug\dsnuoc.txt", FileMode.Open);
             StreamReader sr = new StreamReader(fs, Encoding.UTF8);
             textBox2.Text = sr.ReadToEnd();
             sr.Close();
@@ -41,6 +41,11 @@ namespace Doan1
             StreamReader sr = new StreamReader(fs, Encoding.UTF8);
             textBox2.Text = sr.ReadToEnd();
             sr.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
