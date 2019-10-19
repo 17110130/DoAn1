@@ -19,9 +19,9 @@ namespace Doan1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text=="admin")
+            if(textBox1.Text=="")
             {
-                if(textBox2.Text=="admin")
+                if(textBox2.Text=="")
                 {
                     MessageBox.Show("login success");
                     Form a = new Form2();
