@@ -60,13 +60,40 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="LinkedList.cs" />
+    <Compile Include="UserControls\MenuUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuUC.Designer.cs">
+      <DependentUpon>MenuUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MoneyUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MoneyUC.Designer.cs">
+      <DependentUpon>MoneyUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="UserControls\PromotionsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PromotionsUC.Designer.cs">
+      <DependentUpon>PromotionsUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MenuUC.resx">
+      <DependentUpon>MenuUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MoneyUC.resx">
+      <DependentUpon>MoneyUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PromotionsUC.resx">
+      <DependentUpon>PromotionsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

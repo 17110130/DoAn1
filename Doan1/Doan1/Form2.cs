@@ -16,34 +16,24 @@ namespace Doan1
         public Form2()
         {
             InitializeComponent();
+            menuUC1.BringToFront();
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"C:\Users\Admin\OneDrive\Máy tính\DoAn1\Doan1\Doan1\bin\Debug\dsnuoc.txt", FileMode.Open);                     
-            StreamReader sr = new StreamReader(fs, Encoding.UTF8);                       
-            textBox2.Text = sr.ReadToEnd();                        
-            sr.Close();                       
+            menuUC1.BringToFront();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnMoney_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"C:\Users\Admin\OneDrive\Máy tính\DoAn1\Doan1\Doan1\bin\Debug\gia.txt", FileMode.Open);                        
-            StreamReader sr = new StreamReader(fs, Encoding.UTF8);          
-            textBox2.Text = sr.ReadToEnd();
-            sr.Close();                      
+            moneyUC1.BringToFront();
+
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnPromotions_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"C:\Users\Admin\OneDrive\Máy tính\DoAn1\Doan1\Doan1\bin\Debug\khuyenmai.txt", FileMode.Open);                       
-            StreamReader sr = new StreamReader(fs, Encoding.UTF8);                     
-            textBox2.Text = sr.ReadToEnd();         
-            sr.Close(); 
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
+            promotionsUC1.BringToFront();
 
         }
     }
