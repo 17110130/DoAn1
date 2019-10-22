@@ -59,5 +59,15 @@ namespace Doan1.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _67136733_581022162430362_9051601335316643840_n {
+            get {
+                object obj = ResourceManager.GetObject("67136733_581022162430362_9051601335316643840_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

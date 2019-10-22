@@ -34,9 +34,10 @@
             this.btnPromotions = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuUC1 = new Doan1.MenuUC();
-            this.moneyUC1 = new Doan1.MoneyUC();
             this.promotionsUC1 = new Doan1.PromotionsUC();
+            this.moneyUC1 = new Doan1.MoneyUC();
+            this.menuUC1 = new Doan1.MenuUC();
+            this.gioiThieuUC1 = new Doan1.UserControls.GioiThieuUC();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +86,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gioiThieuUC1);
             this.panel1.Controls.Add(this.promotionsUC1);
             this.panel1.Controls.Add(this.moneyUC1);
             this.panel1.Controls.Add(this.menuUC1);
@@ -93,13 +95,13 @@
             this.panel1.Size = new System.Drawing.Size(353, 261);
             this.panel1.TabIndex = 6;
             // 
-            // menuUC1
+            // promotionsUC1
             // 
-            this.menuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuUC1.Location = new System.Drawing.Point(0, 0);
-            this.menuUC1.Name = "menuUC1";
-            this.menuUC1.Size = new System.Drawing.Size(353, 261);
-            this.menuUC1.TabIndex = 0;
+            this.promotionsUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.promotionsUC1.Location = new System.Drawing.Point(0, 0);
+            this.promotionsUC1.Name = "promotionsUC1";
+            this.promotionsUC1.Size = new System.Drawing.Size(353, 261);
+            this.promotionsUC1.TabIndex = 2;
             // 
             // moneyUC1
             // 
@@ -109,13 +111,21 @@
             this.moneyUC1.Size = new System.Drawing.Size(353, 261);
             this.moneyUC1.TabIndex = 1;
             // 
-            // promotionsUC1
+            // menuUC1
             // 
-            this.promotionsUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.promotionsUC1.Location = new System.Drawing.Point(0, 0);
-            this.promotionsUC1.Name = "promotionsUC1";
-            this.promotionsUC1.Size = new System.Drawing.Size(353, 261);
-            this.promotionsUC1.TabIndex = 2;
+            this.menuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuUC1.Location = new System.Drawing.Point(0, 0);
+            this.menuUC1.Name = "menuUC1";
+            this.menuUC1.Size = new System.Drawing.Size(353, 261);
+            this.menuUC1.TabIndex = 0;
+            // 
+            // gioiThieuUC1
+            // 
+            this.gioiThieuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gioiThieuUC1.Location = new System.Drawing.Point(0, 0);
+            this.gioiThieuUC1.Name = "gioiThieuUC1";
+            this.gioiThieuUC1.Size = new System.Drawing.Size(353, 261);
+            this.gioiThieuUC1.TabIndex = 3;
             // 
             // Form2
             // 
@@ -147,5 +157,6 @@
         private PromotionsUC promotionsUC1;
         private MoneyUC moneyUC1;
         private MenuUC menuUC1;
+        private UserControls.GioiThieuUC gioiThieuUC1;
     }
 }

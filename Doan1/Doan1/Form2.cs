@@ -16,7 +16,7 @@ namespace Doan1
         public Form2()
         {
             InitializeComponent();
-            menuUC1.BringToFront();
+            gioiThieuUC1.BringToFront();
             
         }
 

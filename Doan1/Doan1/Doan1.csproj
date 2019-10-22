@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoUong.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,7 +60,15 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDon.cs" />
     <Compile Include="LinkedList.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="UserControls\GioiThieuUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\GioiThieuUC.Designer.cs">
+      <DependentUpon>GioiThieuUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MenuUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\GioiThieuUC.resx">
+      <DependentUpon>GioiThieuUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MenuUC.resx">
       <DependentUpon>MenuUC.cs</DependentUpon>
@@ -117,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\67136733_581022162430362_9051601335316643840_n.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
