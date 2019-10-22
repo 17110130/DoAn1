@@ -1,24 +1,25 @@
-String
-Red Bull
-Pepsi
-7up
-Tra xanh khong do
-Dr Thanh
-Number 1
-Nuoc yen
-Nutriboost
-Sinh to bo
-Sinh to mang cau
-Sinh to Sabo
-Sinh to xoai
-Sinh to dua
-Tra sua Socola
-Tra sua truyen thong
-Tra sua Cacao
-Tra sua matcha
-Tra sua Oreo kem
-Tra dao
-Capuchino
-Coffee den
-Coffee sua
-Dua trai
+1       String
+2       Red Bull
+3       coca
+4       Pepsi
+5       7up
+6       Tra xanh khong do
+7       Dr Thanh
+8       Number 1
+9       Nuoc yen
+10     Nutriboost
+11     Sinh to bo
+12     Sinh to mang cau
+13     Sinh to Sabo
+14     Sinh to xoai
+15     Sinh to dua
+16     Tra sua Socola
+17     Tra sua truyen thong
+18     Tra sua Cacao
+19     Tra sua matcha
+20     Tra sua Oreo kem
+21     Tra dao
+22     Capuchino
+23     Coffee den
+24     Coffee sua
+25     Dua trai
