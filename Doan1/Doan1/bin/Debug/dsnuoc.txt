@@ -1,4 +1,4 @@
-1                           String
+1                           Sting
 2                           Red Bull
 3                           coca
 4                           Pepsi
