@@ -19,6 +19,6 @@ namespace Doan1
 
         public int Promotion { get; set; }
 
-        public int Price { get; set; }
+        public double Price { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Doan1
         {
             InitializeComponent();
 
-            FileStream fs = new FileStream(@"C:\Users\Admin\Desktop\DOAN1\DoAn1\Doan1\Doan1\bin\Debug\khuyenmai.txt", FileMode.Open);
+            FileStream fs = new FileStream(@"C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\bin\Debug\khuyenmai.txt", FileMode.Open);
             StreamReader sr = new StreamReader(fs, Encoding.UTF8);
             txbPromotions.Text = sr.ReadToEnd();
             sr.Close();
