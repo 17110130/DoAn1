@@ -18,6 +18,7 @@ namespace Doan1
             InitializeComponent();
             gioiThieuUC1.BringToFront();
             taoDuLieu();
+            orderUC1.Hide();
             
         }
         LinkedList<DoUong> CSDL_DoUong = new LinkedList<DoUong>();
@@ -78,6 +79,12 @@ namespace Doan1
         {
             promotionsUC1.BringToFront();
 
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            orderUC1.Show();
+          
         }
     }
 }

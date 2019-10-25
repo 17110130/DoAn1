@@ -34,10 +34,11 @@
             this.btnPromotions = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gioiThieuUC1 = new Doan1.UserControls.GioiThieuUC();
             this.promotionsUC1 = new Doan1.PromotionsUC();
             this.moneyUC1 = new Doan1.MoneyUC();
             this.menuUC1 = new Doan1.MenuUC();
-            this.gioiThieuUC1 = new Doan1.UserControls.GioiThieuUC();
+            this.orderUC1 = new Doan1.UserControls.OrderUC();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +84,7 @@
             this.btnOrder.TabIndex = 5;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // panel1
             // 
@@ -94,6 +96,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(353, 261);
             this.panel1.TabIndex = 6;
+            // 
+            // gioiThieuUC1
+            // 
+            this.gioiThieuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gioiThieuUC1.Location = new System.Drawing.Point(0, 0);
+            this.gioiThieuUC1.Name = "gioiThieuUC1";
+            this.gioiThieuUC1.Size = new System.Drawing.Size(353, 261);
+            this.gioiThieuUC1.TabIndex = 3;
             // 
             // promotionsUC1
             // 
@@ -119,13 +129,13 @@
             this.menuUC1.Size = new System.Drawing.Size(353, 261);
             this.menuUC1.TabIndex = 0;
             // 
-            // gioiThieuUC1
+            // orderUC1
             // 
-            this.gioiThieuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gioiThieuUC1.Location = new System.Drawing.Point(0, 0);
-            this.gioiThieuUC1.Name = "gioiThieuUC1";
-            this.gioiThieuUC1.Size = new System.Drawing.Size(353, 261);
-            this.gioiThieuUC1.TabIndex = 3;
+            this.orderUC1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.orderUC1.Location = new System.Drawing.Point(12, 93);
+            this.orderUC1.Name = "orderUC1";
+            this.orderUC1.Size = new System.Drawing.Size(203, 260);
+            this.orderUC1.TabIndex = 7;
             // 
             // Form2
             // 
@@ -134,6 +144,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.orderUC1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnPromotions);
@@ -158,5 +169,6 @@
         private MoneyUC moneyUC1;
         private MenuUC menuUC1;
         private UserControls.GioiThieuUC gioiThieuUC1;
+        private UserControls.OrderUC orderUC1;
     }
 }

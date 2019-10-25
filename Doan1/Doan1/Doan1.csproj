@@ -82,6 +82,12 @@
       <DependentUpon>MoneyUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="UserControls\OrderUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OrderUC.Designer.cs">
+      <DependentUpon>OrderUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PromotionsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MoneyUC.resx">
       <DependentUpon>MoneyUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OrderUC.resx">
+      <DependentUpon>OrderUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\PromotionsUC.resx">
       <DependentUpon>PromotionsUC.cs</DependentUpon>
