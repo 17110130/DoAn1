@@ -12,7 +12,8 @@ namespace Doan1
         private string customerName;
         private int count;
         private double total;
-        internal LinkedList<DoUong> dsHoaDon;
+
+        private LinkedListHD<DoUong> dsHoaDon;
 
         public int IdHD { get; set; }
 
@@ -22,6 +23,7 @@ namespace Doan1
 
         public double Total { get; set; }
 
-        internal LinkedList<DoUong> DsHoaDon { get; set; }
+        internal LinkedListHD<DoUong> DsHoaDon { get; set; }
+
     }
 }

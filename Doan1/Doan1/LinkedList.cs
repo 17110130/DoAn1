@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Doan1
 {
-    public class LinkedList<T>
+    public class LinkedListHD<T>
     {
         public class Node
         {
@@ -17,7 +17,7 @@ namespace Doan1
         public Node pTail;
         public int count;
 
-        public LinkedList()
+        public LinkedListHD()
         {
             pHead = null;
             pTail = null;

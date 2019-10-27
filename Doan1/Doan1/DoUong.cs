@@ -13,6 +13,8 @@ namespace Doan1
         private int promotion;
         private double price;
 
+
+
         public int ID { get; set; }
 
         public string Name { get; set; }

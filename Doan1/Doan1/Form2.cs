@@ -21,8 +21,14 @@ namespace Doan1
             pnOrder.Hide();
             
         }
-        LinkedList<DoUong> menu = new LinkedList<DoUong>();
+
+        LinkedListHD<DoUong> menu = new LinkedListHD<DoUong>();
+        LinkedListHD<DoUong> dsHoaDon = new LinkedListHD<DoUong>();
+        HoaDon hoadon = new HoaDon();
+        frmHoaDon frmHoaDon = null;
+
         double Total = 0;
+        int IDHoaDon = 1;
 
         public void createDatabase()
         {          
@@ -89,6 +95,7 @@ namespace Doan1
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             Validation validation = new Validation();
+
             string content = "";
             content += validation.Check_Empty("Name Cus", txtNameCusOrder);
             content += validation.Check_Empty("ID", txtIDOrder);
@@ -97,9 +104,27 @@ namespace Doan1
             {
                 MessageBox.Show(content, "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-                   
-            Total += double.Parse(lblPriceOrder.Text);
-            lblTotalOrder.Text = Total + "";
+            else
+            {
+                Total = double.Parse(lblPriceOrder.Text);
+                lblTotalOrder.Text = Total + "";
+
+                LinkedListHD<DoUong>.Node NodeDoUong = menu.pHead;
+                while (NodeDoUong != null)
+                {
+                    if (NodeDoUong.data.ID.ToString() == txtIDOrder.Text)
+                    {
+                        DoUong douong = NodeDoUong.data;
+                        hoadon.IdHD = IDHoaDon;
+                        hoadon.CustomerName = txtNameCusOrder.Text;
+                        hoadon.Count = int.Parse(txtAmountOrder.Text);
+                        hoadon.Total += Total;
+                        dsHoaDon.Add(douong);
+                        IDHoaDon++;
+                    }
+                    NodeDoUong = NodeDoUong.pNext;
+                }              
+            }          
         }
 
         private void txtIDOrder_TextChanged(object sender, EventArgs e)
@@ -111,7 +136,7 @@ namespace Doan1
 
         public string Get_Price(string id)
         {
-            LinkedList<DoUong>.Node NodeDoUong = menu.pHead;
+            LinkedListHD<DoUong>.Node NodeDoUong = menu.pHead;
             while (NodeDoUong != null)
             {
                 if (NodeDoUong.data.ID.ToString() == id )
@@ -122,6 +147,7 @@ namespace Doan1
             }
             return "";
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             pnOrder.Hide();
@@ -131,13 +157,35 @@ namespace Doan1
         {
            Update_Price(txtIDOrder.Text, txtAmountOrder.Text, lblPriceOrder);
         }
+
         public void Update_Price(string id,string amount,Label lbl)
         {
             lbl.Text = int.Parse(amount) * int.Parse(Get_Price(id)) + "";
         }
 
+        public string Show_Textbox()
+        {
+            string output = "";
+            LinkedListHD<DoUong>.Node NodeDoUong = dsHoaDon.pHead;
+            while ( NodeDoUong != null )
+            {
+                output += NodeDoUong.data.Name + "\n\n" + "Amount: " + hoadon.Count + "\n\n";
+                NodeDoUong = NodeDoUong.pNext;
+            }
+            return output;
+        }
+
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            frmHoaDon = new frmHoaDon();
+         
+            frmHoaDon.Width = 400;
+            frmHoaDon.Height = 300;
+            frmHoaDon.lblNameCusBill.Text = txtNameCusOrder.Text;
+            frmHoaDon.txtBill.Text = Show_Textbox() + "\n\n";
+            frmHoaDon.lblTotalBill.Text = hoadon.Total + "";
+
+            frmHoaDon.ShowDialog();
 
         }
     }
