@@ -43,5 +43,4 @@ C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.pdb
 C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.MoneyUC.resources
 C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.PromotionsUC.resources
 C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.UserControls.GioiThieuUC.resources
-C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.UserControls.OrderUC.resources
 C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.csprojAssemblyReference.cache

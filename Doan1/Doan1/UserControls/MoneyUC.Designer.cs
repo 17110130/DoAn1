@@ -35,6 +35,7 @@
             // 
             // txbMoney
             // 
+            this.txbMoney.BackColor = System.Drawing.Color.SandyBrown;
             this.txbMoney.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbMoney.Location = new System.Drawing.Point(0, 27);
             this.txbMoney.Multiline = true;
@@ -65,6 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SandyBrown;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbMoney);

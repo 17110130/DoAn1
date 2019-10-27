@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Doan1
 {
-    class LinkedList<T>
+    public class LinkedList<T>
     {
         public class Node
         {

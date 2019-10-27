@@ -35,6 +35,7 @@
             // 
             // txbMenu
             // 
+            this.txbMenu.BackColor = System.Drawing.Color.SandyBrown;
             this.txbMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbMenu.Location = new System.Drawing.Point(0, 27);
             this.txbMenu.Multiline = true;
@@ -65,6 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SandyBrown;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbMenu);
