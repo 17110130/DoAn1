@@ -13,6 +13,8 @@ namespace Doan1
 {
     public partial class Form2 : Form
     {
+        HoaDon hoadon;
+
         public Form2()
         {
             InitializeComponent();
@@ -23,8 +25,7 @@ namespace Doan1
         }
 
         LinkedListHD<DoUong> menu = new LinkedListHD<DoUong>();
-        LinkedListHD<DoUong> dsHoaDon = new LinkedListHD<DoUong>();
-        HoaDon hoadon = new HoaDon();
+        LinkedListHD<HoaDon> dsHoaDon = new LinkedListHD<HoaDon>();
         frmHoaDon frmHoaDon = null;
 
         double Total = 0;
@@ -93,7 +94,7 @@ namespace Doan1
         }
       
         private void btnAddOrder_Click(object sender, EventArgs e)
-        {
+        {        
             Validation validation = new Validation();
 
             string content = "";
@@ -106,7 +107,7 @@ namespace Doan1
             }
             else
             {
-                Total = double.Parse(lblPriceOrder.Text);
+                Total += double.Parse(lblPriceOrder.Text);
                 lblTotalOrder.Text = Total + "";
 
                 LinkedListHD<DoUong>.Node NodeDoUong = menu.pHead;
@@ -115,23 +116,38 @@ namespace Doan1
                     if (NodeDoUong.data.ID.ToString() == txtIDOrder.Text)
                     {
                         DoUong douong = NodeDoUong.data;
+                        LinkedListHD<HoaDon>.Node NodeHoaDon = dsHoaDon.pHead;
+                        while ( NodeHoaDon != null )
+                        {
+                            if (NodeHoaDon.data.douong.ID.ToString() == txtIDOrder.Text )
+                            {
+                                NodeHoaDon.data.Count += int.Parse(txtAmountOrder.Text);
+                                hoadon.Total += double.Parse(lblPriceOrder.Text);
+                                return;
+                            }
+                            NodeHoaDon = NodeHoaDon.pNext;
+                        }
+                        hoadon = new HoaDon();
                         hoadon.IdHD = IDHoaDon;
                         hoadon.CustomerName = txtNameCusOrder.Text;
+                        hoadon.Total += double.Parse(lblPriceOrder.Text);
+                        hoadon.douong = douong;
                         hoadon.Count = int.Parse(txtAmountOrder.Text);
-                        hoadon.Total += Total;
-                        dsHoaDon.Add(douong);
+                        dsHoaDon.Add(hoadon);
                         IDHoaDon++;
                     }
                     NodeDoUong = NodeDoUong.pNext;
                 }              
-            }          
+            }
+           
+            
         }
 
         private void txtIDOrder_TextChanged(object sender, EventArgs e)
         {
             txtAmountOrder.Text = "1";
 
-            lblPriceOrder.Text = Get_Price(txtIDOrder.Text);
+            //lblPriceOrder.Text = Get_Price(txtIDOrder.Text);
         }
 
         public string Get_Price(string id)
@@ -155,22 +171,64 @@ namespace Doan1
 
         private void txtAmountOrder_TextChanged(object sender, EventArgs e)
         {
-           Update_Price(txtIDOrder.Text, txtAmountOrder.Text, lblPriceOrder);
-        }
-
-        public void Update_Price(string id,string amount,Label lbl)
-        {
-            lbl.Text = int.Parse(amount) * int.Parse(Get_Price(id)) + "";
+            int num = 1;
+            if ( txtAmountOrder.Text == "" || txtAmountOrder.Text == "0" )
+            {
+                txtAmountOrder.Text = "1";
+            }
+            else
+            {
+                bool convert = int.TryParse(txtAmountOrder.Text, out num);
+                if ( convert == true )
+                {
+                    LinkedListHD<HoaDon>.Node NodeHoaDon = dsHoaDon.pHead;
+                    if ( NodeHoaDon == null )
+                    {
+                        if ( num < 0 )
+                        {
+                            MessageBox.Show("Bạn chưa order đồ uống này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                    while (NodeHoaDon != null)
+                    {
+                        if (NodeHoaDon.data.douong.ID.ToString() == txtIDOrder.Text)
+                        {
+                            if (num > 0)
+                            {
+                                lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
+                                return;
+                            }
+                            else
+                            {
+                               if ( Math.Abs(num) >= NodeHoaDon.data.Count)
+                                {
+                                    MessageBox.Show("Bạn muốn trả lại đồ uống này","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+                        }                     
+                        NodeHoaDon = NodeHoaDon.pNext;
+                    }
+                    if ( num < 0 )
+                    {
+                        MessageBox.Show("Bạn chưa order đồ uống này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }                   
+                }
+                else {}
+            }       
+            lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";        
         }
 
         public string Show_Textbox()
         {
             string output = "";
-            LinkedListHD<DoUong>.Node NodeDoUong = dsHoaDon.pHead;
-            while ( NodeDoUong != null )
+            LinkedListHD<HoaDon>.Node NodeHoaDon = dsHoaDon.pHead;
+            while ( NodeHoaDon != null )
             {
-                output += NodeDoUong.data.Name + "\n\n" + "Amount: " + hoadon.Count + "\n\n";
-                NodeDoUong = NodeDoUong.pNext;
+                output += NodeHoaDon.data.douong.Name + "\r\n" + "Amount: " + NodeHoaDon.data.Count + "\r\n";
+                NodeHoaDon = NodeHoaDon.pNext;
             }
             return output;
         }
@@ -182,8 +240,8 @@ namespace Doan1
             frmHoaDon.Width = 400;
             frmHoaDon.Height = 300;
             frmHoaDon.lblNameCusBill.Text = txtNameCusOrder.Text;
-            frmHoaDon.txtBill.Text = Show_Textbox() + "\n\n";
-            frmHoaDon.lblTotalBill.Text = hoadon.Total + "";
+            frmHoaDon.txtBill.Text = Show_Textbox() + "\r\n";
+            frmHoaDon.lblTotalBill.Text = lblTotalOrder.Text + "";
 
             frmHoaDon.ShowDialog();
 

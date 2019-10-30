@@ -15,6 +15,9 @@ namespace Doan1
             this.dsnuoc = new LinkedList<DoUong>();
         }
 
-        internal LinkedList<DoUong> DsNuoc { get; set; }
+        internal LinkedList<DoUong> DsNuoc {
+            get { return dsnuoc; }
+            set { dsnuoc = value; }
+        }
     }
 }

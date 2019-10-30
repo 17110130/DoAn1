@@ -10,20 +10,36 @@ namespace Doan1
     {
         private int idHD;
         private string customerName;
-        private int count;
         private double total;
+        private int count;
 
-        private LinkedListHD<DoUong> dsHoaDon;
+        public DoUong douong;
 
-        public int IdHD { get; set; }
+        public HoaDon()
+        {
+            Count = 0;
+            douong = new DoUong();
+        }
+        public int IdHD {
+            get { return idHD; }
+            set { idHD = value; }
+        }
 
-        public string CustomerName { get; set; }
+        public string CustomerName {
+            get { return CustomerName; }
+            set { customerName = value; }
+        }
 
-        public int Count { get; set; }
+        public double Total {
+            get { return total; }
+            set { total = value; }
+        }
 
-        public double Total { get; set; }
-
-        internal LinkedListHD<DoUong> DsHoaDon { get; set; }
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
 
     }
 }

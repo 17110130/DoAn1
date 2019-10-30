@@ -14,13 +14,25 @@ namespace Doan1
         private double price;
 
 
+        public int ID {
+            get { return id; }
+            set { id = value; }
+        }
 
-        public int ID { get; set; }
+        public string Name {
+            get { return name; }
+            set { name = value; }
+        }
 
-        public string Name { get; set; }
+        public int Promotion {
+            get { return promotion; }
+            set { promotion = value; }
+        }
 
-        public int Promotion { get; set; }
-
-        public double Price { get; set; }
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
     }
 }
