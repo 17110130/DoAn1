@@ -22,6 +22,8 @@ namespace Doan1
             txbMenu.Text = sr.ReadToEnd();
             sr.Close();
 
+            
+
 
         }
     }

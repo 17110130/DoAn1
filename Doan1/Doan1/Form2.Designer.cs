@@ -34,6 +34,10 @@
             this.btnPromotions = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gioiThieuUC1 = new Doan1.UserControls.GioiThieuUC();
+            this.promotionsUC1 = new Doan1.PromotionsUC();
+            this.moneyUC1 = new Doan1.MoneyUC();
+            this.menuUC1 = new Doan1.MenuUC();
             this.pnOrder = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -48,12 +52,13 @@
             this.txtAmountOrder = new System.Windows.Forms.TextBox();
             this.txtIDOrder = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gioiThieuUC1 = new Doan1.UserControls.GioiThieuUC();
-            this.promotionsUC1 = new Doan1.PromotionsUC();
-            this.moneyUC1 = new Doan1.MoneyUC();
-            this.menuUC1 = new Doan1.MenuUC();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.drinkManagentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDrinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeDrinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.pnOrder.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMenu
@@ -110,6 +115,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(353, 261);
             this.panel1.TabIndex = 6;
+            // 
+            // gioiThieuUC1
+            // 
+            this.gioiThieuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gioiThieuUC1.Location = new System.Drawing.Point(0, 0);
+            this.gioiThieuUC1.Name = "gioiThieuUC1";
+            this.gioiThieuUC1.Size = new System.Drawing.Size(353, 261);
+            this.gioiThieuUC1.TabIndex = 3;
+            // 
+            // promotionsUC1
+            // 
+            this.promotionsUC1.BackColor = System.Drawing.Color.SandyBrown;
+            this.promotionsUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.promotionsUC1.Location = new System.Drawing.Point(0, 0);
+            this.promotionsUC1.Name = "promotionsUC1";
+            this.promotionsUC1.Size = new System.Drawing.Size(353, 261);
+            this.promotionsUC1.TabIndex = 2;
+            // 
+            // moneyUC1
+            // 
+            this.moneyUC1.BackColor = System.Drawing.Color.SandyBrown;
+            this.moneyUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moneyUC1.Location = new System.Drawing.Point(0, 0);
+            this.moneyUC1.Name = "moneyUC1";
+            this.moneyUC1.Size = new System.Drawing.Size(353, 261);
+            this.moneyUC1.TabIndex = 1;
+            // 
+            // menuUC1
+            // 
+            this.menuUC1.BackColor = System.Drawing.Color.SandyBrown;
+            this.menuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuUC1.Location = new System.Drawing.Point(0, 0);
+            this.menuUC1.Name = "menuUC1";
+            this.menuUC1.Size = new System.Drawing.Size(353, 261);
+            this.menuUC1.TabIndex = 0;
             // 
             // pnOrder
             // 
@@ -268,40 +308,38 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "ID:";
             // 
-            // gioiThieuUC1
+            // menuStrip1
             // 
-            this.gioiThieuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gioiThieuUC1.Location = new System.Drawing.Point(0, 0);
-            this.gioiThieuUC1.Name = "gioiThieuUC1";
-            this.gioiThieuUC1.Size = new System.Drawing.Size(353, 261);
-            this.gioiThieuUC1.TabIndex = 3;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.drinkManagentToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // promotionsUC1
+            // drinkManagentToolStripMenuItem
             // 
-            this.promotionsUC1.BackColor = System.Drawing.Color.SandyBrown;
-            this.promotionsUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.promotionsUC1.Location = new System.Drawing.Point(0, 0);
-            this.promotionsUC1.Name = "promotionsUC1";
-            this.promotionsUC1.Size = new System.Drawing.Size(353, 261);
-            this.promotionsUC1.TabIndex = 2;
+            this.drinkManagentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addDrinkToolStripMenuItem,
+            this.removeDrinksToolStripMenuItem});
+            this.drinkManagentToolStripMenuItem.Name = "drinkManagentToolStripMenuItem";
+            this.drinkManagentToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.drinkManagentToolStripMenuItem.Text = "Drink Management";
             // 
-            // moneyUC1
+            // addDrinkToolStripMenuItem
             // 
-            this.moneyUC1.BackColor = System.Drawing.Color.SandyBrown;
-            this.moneyUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.moneyUC1.Location = new System.Drawing.Point(0, 0);
-            this.moneyUC1.Name = "moneyUC1";
-            this.moneyUC1.Size = new System.Drawing.Size(353, 261);
-            this.moneyUC1.TabIndex = 1;
+            this.addDrinkToolStripMenuItem.Name = "addDrinkToolStripMenuItem";
+            this.addDrinkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addDrinkToolStripMenuItem.Text = "Add Drinks";
+            this.addDrinkToolStripMenuItem.Click += new System.EventHandler(this.addDrinkToolStripMenuItem_Click);
             // 
-            // menuUC1
+            // removeDrinksToolStripMenuItem
             // 
-            this.menuUC1.BackColor = System.Drawing.Color.SandyBrown;
-            this.menuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuUC1.Location = new System.Drawing.Point(0, 0);
-            this.menuUC1.Name = "menuUC1";
-            this.menuUC1.Size = new System.Drawing.Size(353, 261);
-            this.menuUC1.TabIndex = 0;
+            this.removeDrinksToolStripMenuItem.Name = "removeDrinksToolStripMenuItem";
+            this.removeDrinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeDrinksToolStripMenuItem.Text = "Remove Drinks";
+            this.removeDrinksToolStripMenuItem.Click += new System.EventHandler(this.removeDrinksToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -316,14 +354,19 @@
             this.Controls.Add(this.btnPromotions);
             this.Controls.Add(this.btnMoney);
             this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Quản Lý Quán Cafe";
             this.panel1.ResumeLayout(false);
             this.pnOrder.ResumeLayout(false);
             this.pnOrder.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -351,5 +394,9 @@
         private System.Windows.Forms.TextBox txtIDOrder;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem drinkManagentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addDrinkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeDrinksToolStripMenuItem;
     }
 }

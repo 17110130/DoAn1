@@ -24,9 +24,11 @@ namespace Doan1
             
         }
 
-        LinkedListHD<DoUong> menu = new LinkedListHD<DoUong>();
+        public static LinkedListHD<DoUong> menu = new LinkedListHD<DoUong>();
         LinkedListHD<HoaDon> dsHoaDon = new LinkedListHD<HoaDon>();
         frmHoaDon frmHoaDon = null;
+        frmAddDrinks frmAddDrinks = null;
+        frmRemoveDrink frmRemoveDrinks = null;
 
         double Total = 0;
         int IDHoaDon = 1;
@@ -186,7 +188,7 @@ namespace Doan1
                     {
                         if ( num < 0 )
                         {
-                            MessageBox.Show("Bạn chưa order đồ uống này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Hóa đơn trống không thể trả lại đồ uống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
@@ -203,18 +205,25 @@ namespace Doan1
                             {
                                if ( Math.Abs(num) >= NodeHoaDon.data.Count)
                                 {
+                                    lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
                                     MessageBox.Show("Bạn muốn trả lại đồ uống này","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                                    return;
+                                }
+                               else
+                                {
+                                    lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
                                     return;
                                 }
                             }
                         }                     
                         NodeHoaDon = NodeHoaDon.pNext;
-                    }
-                    if ( num < 0 )
-                    {
-                        MessageBox.Show("Bạn chưa order đồ uống này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }                   
+                    }                  
+                        if (num < 0)
+                        {
+                            MessageBox.Show("Bạn chưa order đồ uống này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtAmountOrder.Text = "1";
+                            return;
+                        }                                     
                 }
                 else {}
             }       
@@ -245,6 +254,26 @@ namespace Doan1
 
             frmHoaDon.ShowDialog();
 
+        }
+
+        private void addDrinkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddDrinks = new frmAddDrinks();
+
+            frmAddDrinks.Width = 400;
+            frmAddDrinks.Height = 300;
+
+            frmAddDrinks.ShowDialog();
+        }
+
+        private void removeDrinksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRemoveDrinks = new frmRemoveDrink();
+
+            frmRemoveDrinks.Width = 400;
+            frmRemoveDrinks.Height = 300;
+
+            frmRemoveDrinks.ShowDialog();
         }
     }
 }

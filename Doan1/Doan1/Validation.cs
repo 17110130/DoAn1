@@ -15,6 +15,15 @@ namespace Doan1
             if (txt.Text == "")
                 return "Mời nhập " + name + " !\n";
             return "";
-        }      
+        }
+        
+        //public bool Check_Duplicate(string t,TextBox txt)
+        //{
+        //    if ( txt.Text == t )
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
     }
 }

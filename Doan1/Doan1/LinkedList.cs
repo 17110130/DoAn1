@@ -54,9 +54,10 @@ namespace Doan1
 
         public void Remove(Node pSearch)
         {
-            Node pPre = null;
             Node pDelete = pHead;
-            while ( pDelete != null )
+            Node pPre = null;
+
+            while (pDelete != null)
             {
                 if (pDelete == pSearch)
                     break;
@@ -81,9 +82,8 @@ namespace Doan1
                 pDelete.pNext = null;
                 pDelete = null;
             }
+
             count--;
         }
-
-
     }
 }
