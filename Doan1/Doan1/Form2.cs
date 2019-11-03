@@ -18,8 +18,8 @@ namespace Doan1
         public Form2()
         {
             InitializeComponent();
-            gioiThieuUC1.BringToFront();
             createDatabase();
+            gioiThieuUC1.BringToFront();
             pnOrder.Hide();
             
         }
@@ -76,17 +76,58 @@ namespace Doan1
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
+            menuUC1.txbMenu.Text = "";
+            LinkedListHD<DoUong>.Node NodeMenu = Form2.menu.pHead;
+            while (NodeMenu != null)
+            {
+                if (NodeMenu.data.ID.ToString().Length < 2)
+                {
+                    menuUC1.txbMenu.Text += NodeMenu.data.ID + "                   " + NodeMenu.data.Name + "\r\n";
+                }
+                else
+                {
+                    menuUC1.txbMenu.Text += NodeMenu.data.ID + "                 " + NodeMenu.data.Name + "\r\n";
+                }
+                NodeMenu = NodeMenu.pNext;
+            }
             menuUC1.BringToFront();
         }
 
         private void btnMoney_Click(object sender, EventArgs e)
         {
+            moneyUC1.txbMoney.Text = "";
+            LinkedListHD<DoUong>.Node NodeMenu = Form2.menu.pHead;
+            while (NodeMenu != null)
+            {
+                if (NodeMenu.data.ID.ToString().Length < 2)
+                {
+                    moneyUC1.txbMoney.Text += NodeMenu.data.ID + "                   " + NodeMenu.data.Price + "\r\n";
+                }
+                else
+                {
+                    moneyUC1.txbMoney.Text += NodeMenu.data.ID + "                 " + NodeMenu.data.Price + "\r\n";
+                }
+                NodeMenu = NodeMenu.pNext;
+            }
             moneyUC1.BringToFront();
-
         }
 
         private void btnPromotions_Click(object sender, EventArgs e)
         {
+            promotionsUC1.txbPromotions.Text = "";
+            LinkedListHD<DoUong>.Node NodeMenu = Form2.menu.pHead;
+            while (NodeMenu != null)
+            {
+                if (NodeMenu.data.ID.ToString().Length < 2)
+                {
+                    promotionsUC1.txbPromotions.Text += NodeMenu.data.ID + "                   " + NodeMenu.data.Promotion + "\r\n";
+                }
+                else
+                {
+                    promotionsUC1.txbPromotions.Text += NodeMenu.data.ID + "                 " + NodeMenu.data.Promotion + "\r\n";
+                }
+                NodeMenu = NodeMenu.pNext;
+            }
             promotionsUC1.BringToFront();
         }
 
@@ -102,6 +143,7 @@ namespace Doan1
             string content = "";
             content += validation.Check_Empty("Name Cus", txtNameCusOrder);
             content += validation.Check_Empty("ID", txtIDOrder);
+            content += validation.Check_Empty("Amount", txtAmountOrder);
 
             if ( content != "" )
             {
@@ -109,15 +151,40 @@ namespace Doan1
             }
             else
             {
-                Total += double.Parse(lblPriceOrder.Text);
-                lblTotalOrder.Text = Total + "";
-
+                int test = 0;
                 LinkedListHD<DoUong>.Node NodeDoUong = menu.pHead;
+
                 while (NodeDoUong != null)
                 {
                     if (NodeDoUong.data.ID.ToString() == txtIDOrder.Text)
+                        test = 1;
+                    NodeDoUong = NodeDoUong.pNext;
+                }
+
+                if ( test == 0 )
+                {
+                    MessageBox.Show("ID đồ uống không tồn tại trong menu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Total += double.Parse(lblPriceOrder.Text);
+                if (Total <= 0)
+                {
+                    lblTotalOrder.Text = "";
+                }
+                else
+                {
+                    lblTotalOrder.Text = Total + "";
+                }
+
+                LinkedListHD<DoUong>.Node Node = menu.pHead;
+
+                while (Node != null)
+                {
+                    if (Node.data.ID.ToString() == txtIDOrder.Text)
                     {
-                        DoUong douong = NodeDoUong.data;
+                       
+                        DoUong douong = Node.data;
                         LinkedListHD<HoaDon>.Node NodeHoaDon = dsHoaDon.pHead;
                         while ( NodeHoaDon != null )
                         {
@@ -125,6 +192,11 @@ namespace Doan1
                             {
                                 NodeHoaDon.data.Count += int.Parse(txtAmountOrder.Text);
                                 hoadon.Total += double.Parse(lblPriceOrder.Text);
+                                txtAmountOrder.Text = "1";
+                                if (NodeHoaDon.data.Count <= 0 )
+                                {
+                                    dsHoaDon.Remove(NodeHoaDon);
+                                }
                                 return;
                             }
                             NodeHoaDon = NodeHoaDon.pNext;
@@ -136,20 +208,17 @@ namespace Doan1
                         hoadon.douong = douong;
                         hoadon.Count = int.Parse(txtAmountOrder.Text);
                         dsHoaDon.Add(hoadon);
-                        IDHoaDon++;
                     }
-                    NodeDoUong = NodeDoUong.pNext;
+                    Node = Node.pNext;
                 }              
             }
-           
-            
+            txtAmountOrder.Text = "1";
         }
 
         private void txtIDOrder_TextChanged(object sender, EventArgs e)
         {
-            txtAmountOrder.Text = "1";
-
-            //lblPriceOrder.Text = Get_Price(txtIDOrder.Text);
+            if (txtIDOrder.Text != "")
+                txtAmountOrder.Text = "1";
         }
 
         public string Get_Price(string id)
@@ -174,7 +243,7 @@ namespace Doan1
         private void txtAmountOrder_TextChanged(object sender, EventArgs e)
         {
             int num = 1;
-            if ( txtAmountOrder.Text == "" || txtAmountOrder.Text == "0" )
+            if ( txtAmountOrder.Text == "0" )
             {
                 txtAmountOrder.Text = "1";
             }
@@ -226,8 +295,11 @@ namespace Doan1
                         }                                     
                 }
                 else {}
-            }       
-            lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";        
+            }
+            if (txtIDOrder.Text != "")
+            {
+                lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";        
+            }
         }
 
         public string Show_Textbox()
@@ -253,6 +325,16 @@ namespace Doan1
             frmHoaDon.lblTotalBill.Text = lblTotalOrder.Text + "";
 
             frmHoaDon.ShowDialog();
+
+            txtNameCusOrder.Text = "";
+            txtIDOrder.Text = "";
+            txtAmountOrder.Text = "";
+            lblPriceOrder.Text = "";
+            lblTotalOrder.Text = "";
+            Total = 0;
+            IDHoaDon++;
+
+            dsHoaDon = new LinkedListHD<HoaDon>();
 
         }
 

@@ -72,15 +72,15 @@
             this.Controls.Add(this.txbMenu);
             this.Name = "MenuUC";
             this.Size = new System.Drawing.Size(353, 261);
+            this.Load += new System.EventHandler(this.MenuUC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txbMenu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txbMenu;
     }
 }

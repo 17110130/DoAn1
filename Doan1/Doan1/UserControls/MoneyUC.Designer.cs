@@ -72,15 +72,15 @@
             this.Controls.Add(this.txbMoney);
             this.Name = "MoneyUC";
             this.Size = new System.Drawing.Size(353, 261);
+            this.Load += new System.EventHandler(this.MoneyUC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txbMoney;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txbMoney;
     }
 }

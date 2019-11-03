@@ -40,6 +40,7 @@
             this.txbPromotions.Location = new System.Drawing.Point(0, 27);
             this.txbPromotions.Multiline = true;
             this.txbPromotions.Name = "txbPromotions";
+            this.txbPromotions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txbPromotions.Size = new System.Drawing.Size(353, 234);
             this.txbPromotions.TabIndex = 0;
             // 
@@ -71,15 +72,15 @@
             this.Controls.Add(this.txbPromotions);
             this.Name = "PromotionsUC";
             this.Size = new System.Drawing.Size(353, 261);
+            this.Load += new System.EventHandler(this.PromotionsUC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txbPromotions;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txbPromotions;
     }
 }

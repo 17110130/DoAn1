@@ -16,12 +16,23 @@ namespace Doan1
         public PromotionsUC()
         {
             InitializeComponent();
+        }
 
-            FileStream fs = new FileStream(@"C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\bin\Debug\khuyenmai.txt", FileMode.Open);
-            StreamReader sr = new StreamReader(fs, Encoding.UTF8);
-            txbPromotions.Text = sr.ReadToEnd();
-            sr.Close();
-
+        private void PromotionsUC_Load(object sender, EventArgs e)
+        {
+            LinkedListHD<DoUong>.Node NodeMenu = Form2.menu.pHead;
+            while (NodeMenu != null)
+            {
+                if (NodeMenu.data.ID.ToString().Length < 2)
+                {
+                    txbPromotions.Text += NodeMenu.data.ID + "                   " + NodeMenu.data.Price + "\r\n";
+                }
+                else
+                {
+                    txbPromotions.Text += NodeMenu.data.ID + "                 " + NodeMenu.data.Price + "\r\n";
+                }
+                NodeMenu = NodeMenu.pNext;
+            }
         }
     }
 }

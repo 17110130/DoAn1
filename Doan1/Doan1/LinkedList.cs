@@ -24,6 +24,16 @@ namespace Doan1
             count = 0;
         }
 
+        //public override string ToString()
+        //{
+        //    string text = "";
+        //    while(pHead.data !=  null)
+        //    {
+        //        text += pHead.data.ToString() + "\n";
+        //    }
+        //    return text;
+        //}
+
         Node CreateNode(T import)
         {
             Node p = new Node();
@@ -85,5 +95,6 @@ namespace Doan1
 
             count--;
         }
+
     }
 }

@@ -61,6 +61,7 @@ namespace Doan1
                 txtNameAdd.Text = "";
                 txtPromotionAdd.Text = "";
                 txtPriceAdd.Text = "";
+
             }
         }
     }

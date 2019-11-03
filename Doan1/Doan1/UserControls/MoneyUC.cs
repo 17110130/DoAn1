@@ -16,12 +16,23 @@ namespace Doan1
         public MoneyUC()
         {
             InitializeComponent();
+        }
 
-            FileStream fs = new FileStream(@"C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\bin\Debug\gia.txt", FileMode.Open);
-            StreamReader sr = new StreamReader(fs, Encoding.UTF8);
-            txbMoney.Text = sr.ReadToEnd();
-            sr.Close();
-
+        private void MoneyUC_Load(object sender, EventArgs e)
+        {
+            LinkedListHD<DoUong>.Node NodeMenu = Form2.menu.pHead;
+            while (NodeMenu != null)
+            {
+                if (NodeMenu.data.ID.ToString().Length < 2)
+                {
+                    txbMoney.Text += NodeMenu.data.ID + "                   " + NodeMenu.data.Price + "\r\n";
+                }
+                else
+                {
+                    txbMoney.Text += NodeMenu.data.ID + "                 " + NodeMenu.data.Price + "\r\n";
+                }
+                NodeMenu = NodeMenu.pNext;
+            }
         }
     }
 }

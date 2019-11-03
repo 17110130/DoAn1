@@ -15,16 +15,24 @@ namespace Doan1
     {
         public MenuUC()
         {
-            InitializeComponent();
+            InitializeComponent();          
+        }
 
-            FileStream fs = new FileStream(@"C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\bin\Debug\dsnuoc.txt", FileMode.Open);
-            StreamReader sr = new StreamReader(fs, Encoding.UTF8);
-            txbMenu.Text = sr.ReadToEnd();
-            sr.Close();
-
-            
-
-
+        private void MenuUC_Load(object sender, EventArgs e)
+        {
+            LinkedListHD<DoUong>.Node NodeMenu = Form2.menu.pHead;
+            while (NodeMenu != null)
+            {
+                if (NodeMenu.data.ID.ToString().Length < 2)
+                {
+                    txbMenu.Text += NodeMenu.data.ID + "                   " + NodeMenu.data.Name + "\r\n";
+                }
+                else
+                {
+                    txbMenu.Text += NodeMenu.data.ID + "                 " + NodeMenu.data.Name + "\r\n";
+                }
+                NodeMenu = NodeMenu.pNext;
+            }
         }
     }
 }
