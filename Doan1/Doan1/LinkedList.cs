@@ -22,17 +22,7 @@ namespace Doan1
             pHead = null;
             pTail = null;
             count = 0;
-        }
-
-        //public override string ToString()
-        //{
-        //    string text = "";
-        //    while(pHead.data !=  null)
-        //    {
-        //        text += pHead.data.ToString() + "\n";
-        //    }
-        //    return text;
-        //}
+        }       
 
         Node CreateNode(T import)
         {
@@ -58,6 +48,23 @@ namespace Doan1
                 pTail.pNext = p;
                 pTail = p;
                 pTail.pNext = null;
+            }
+            count++;
+        }
+
+        public void AddFirst(T info)
+        {
+            Node p = CreateNode(info);
+
+            if ( pHead == null )
+            {
+                pHead = p;
+                pTail = p;
+            }
+            else
+            {
+                p.pNext = pHead;
+                pHead = p;
             }
             count++;
         }
