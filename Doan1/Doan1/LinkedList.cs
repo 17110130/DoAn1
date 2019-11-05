@@ -69,6 +69,26 @@ namespace Doan1
             count++;
         }
 
+        public void AddAfter(T info,Node pSearch)
+        {
+            Node p = CreateNode(info);
+            if ( pSearch == null )
+            {
+                AddFirst(info);
+            }
+            else
+            {
+                p.pNext = pSearch.pNext;
+                pSearch.pNext = p;
+
+                if ( pSearch == pTail )
+                {
+                    pTail = p;
+                }
+            }
+            count++;
+        }
+
         public void Remove(Node pSearch)
         {
             Node pDelete = pHead;

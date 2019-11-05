@@ -29,6 +29,7 @@ namespace Doan1
         frmHoaDon frmHoaDon = null;
         frmAddDrinks frmAddDrinks = null;
         frmRemoveDrink frmRemoveDrinks = null;
+        frmAddAfter frmAddAfter = null;
 
         double Total = 0;
         int IDHoaDon = 1;
@@ -356,6 +357,16 @@ namespace Doan1
             frmRemoveDrinks.Height = 300;
 
             frmRemoveDrinks.ShowDialog();
+        }
+
+        private void addAfterDrinksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddAfter = new frmAddAfter();
+
+            frmAddAfter.Width = 400;
+            frmAddAfter.Height = 500;
+
+            frmAddAfter.ShowDialog();
         }
     }
 }

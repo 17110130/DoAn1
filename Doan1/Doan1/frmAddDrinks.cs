@@ -17,10 +17,6 @@ namespace Doan1
             InitializeComponent();
         }
 
-        //internal void Get_Data(LinkedListHD<DoUong> menu)
-        //{
-        //    this.menu = menu;
-        //}
 
         private void btnAddDrinks_Click(object sender, EventArgs e)
         {

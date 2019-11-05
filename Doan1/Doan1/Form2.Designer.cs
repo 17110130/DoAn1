@@ -56,6 +56,7 @@
             this.drinkManagentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDrinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeDrinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAfterDrinksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.pnOrder.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -322,7 +323,8 @@
             // 
             this.drinkManagentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addDrinkToolStripMenuItem,
-            this.removeDrinksToolStripMenuItem});
+            this.removeDrinksToolStripMenuItem,
+            this.addAfterDrinksToolStripMenuItem});
             this.drinkManagentToolStripMenuItem.Name = "drinkManagentToolStripMenuItem";
             this.drinkManagentToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.drinkManagentToolStripMenuItem.Text = "Drink Management";
@@ -340,6 +342,13 @@
             this.removeDrinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeDrinksToolStripMenuItem.Text = "Remove Drinks";
             this.removeDrinksToolStripMenuItem.Click += new System.EventHandler(this.removeDrinksToolStripMenuItem_Click);
+            // 
+            // addAfterDrinksToolStripMenuItem
+            // 
+            this.addAfterDrinksToolStripMenuItem.Name = "addAfterDrinksToolStripMenuItem";
+            this.addAfterDrinksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addAfterDrinksToolStripMenuItem.Text = "AddAfter Drinks";
+            this.addAfterDrinksToolStripMenuItem.Click += new System.EventHandler(this.addAfterDrinksToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -398,5 +407,6 @@
         private System.Windows.Forms.ToolStripMenuItem drinkManagentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addDrinkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeDrinksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addAfterDrinksToolStripMenuItem;
     }
 }
