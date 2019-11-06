@@ -92,6 +92,7 @@
             this.btnExportFile.TabIndex = 4;
             this.btnExportFile.Text = "Export File";
             this.btnExportFile.UseVisualStyleBackColor = false;
+            this.btnExportFile.Click += new System.EventHandler(this.btnExportFile_Click);
             // 
             // frmHoaDon
             // 

@@ -92,7 +92,6 @@
     </Compile>
     <Compile Include="HoaDon.cs" />
     <Compile Include="LinkedList.cs" />
-    <Compile Include="Menu.cs" />
     <Compile Include="UserControls\GioiThieuUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
