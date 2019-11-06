@@ -48,3 +48,4 @@ C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.frmHoaDon.re
 C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.frmAddDrinks.resources
 C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.frmRemoveDrink.resources
 C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.frmAddAfter.resources
+C:\Users\Admin\Desktop\New folder\DoAn1\Doan1\Doan1\obj\Debug\Doan1.frmAddBefore.resources

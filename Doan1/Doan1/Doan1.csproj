@@ -66,6 +66,12 @@
     <Compile Include="frmAddAfter.Designer.cs">
       <DependentUpon>frmAddAfter.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddBefore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddBefore.Designer.cs">
+      <DependentUpon>frmAddBefore.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddDrinks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddAfter.resx">
       <DependentUpon>frmAddAfter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddBefore.resx">
+      <DependentUpon>frmAddBefore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddDrinks.resx">
       <DependentUpon>frmAddDrinks.cs</DependentUpon>
