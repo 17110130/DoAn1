@@ -220,7 +220,19 @@ namespace Doan1
         private void txtIDOrder_TextChanged(object sender, EventArgs e)
         {
             if (txtIDOrder.Text != "")
-                txtAmountOrder.Text = "1";
+            {
+                txtAmountOrder.Text = "1";      
+                LinkedListHD<DoUong>.Node node = menu.pHead;
+                while (node != null)
+                {
+                    if (node.data.ID.ToString() == txtIDOrder.Text)
+                    {
+                        lblPriceOrder.Text = int.Parse(txtAmountOrder.Text) * node.data.Price + "";
+                        return;
+                    }
+                    node = node.pNext;
+                }
+            }
         }
 
         public string Get_Price(string id)
@@ -251,6 +263,7 @@ namespace Doan1
             }
             else
             {
+              
                 bool convert = int.TryParse(txtAmountOrder.Text, out num);
                 if ( convert == true )
                 {
@@ -262,15 +275,38 @@ namespace Doan1
                             MessageBox.Show("Hóa đơn trống không thể trả lại đồ uống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        else
+                        {
+                            lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
+                            return;
+                        }
                     }
+
                     while (NodeHoaDon != null)
                     {
                         if (NodeHoaDon.data.douong.ID.ToString() == txtIDOrder.Text)
                         {
+                            // Đồ uống đã có trong hóa đơn ===> order thêm
                             if (num > 0)
                             {
-                                lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
-                                return;
+                                if ( NodeHoaDon.data.Count + num > 5 && NodeHoaDon.data.douong.Promotion != 0)
+                                {
+                                    if ( NodeHoaDon.data.douong.Promotion == 1 )
+                                    {
+                                        lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text))) * 0.8 + "";
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text))) * 0.7 + "";
+                                        return;
+                                    }                     
+                                }
+                                else
+                                {
+                                    lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
+                                    return;
+                                }                              
                             }
                             else
                             {
@@ -282,25 +318,82 @@ namespace Doan1
                                 }
                                else
                                 {
-                                    lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
+                                    lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text))) + "";
                                     return;
                                 }
                             }
                         }                     
                         NodeHoaDon = NodeHoaDon.pNext;
-                    }                  
+                    }          
+                    // Đồ uống chưa có trong hóa đơn
                         if (num < 0)
                         {
                             MessageBox.Show("Bạn chưa order đồ uống này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             txtAmountOrder.Text = "1";
                             return;
-                        }                                     
+                        }
+                    else
+                    {
+                        LinkedListHD<HoaDon>.Node Node = dsHoaDon.pHead;
+                        while( Node != null)
+                        {
+                            if (Node.data.douong.Promotion == 1)
+                            {
+                                lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text))) * 0.8 + "";
+                                return;
+                            }
+                            else
+                            {
+                                if (Node.data.douong.Promotion == 2)
+                                {
+                                    lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text))) * 0.7 + "";
+                                    return;
+                                }
+                            }
+                            Node= Node.pNext;
+                        }
+                        
+                        // Promotion == 0
+                        lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text))) + "";
+                        return;
+                    }
                 }
-                else {}
+                else {
+                    // Không convert được  
+                }
             }
+            // Đồ uống chưa có trong hóa đơn
             if (txtIDOrder.Text != "")
             {
-                lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";        
+                if ( num > 5 )
+                {
+                    LinkedListHD<HoaDon>.Node NodeHoaDon = dsHoaDon.pHead;
+                    while (NodeHoaDon != null)
+                    {
+                        if ( NodeHoaDon.data.douong.ID.ToString() == txtIDOrder.Text )
+                        {
+                            if ( NodeHoaDon.data.douong.Promotion == 1 )
+                            {
+                                lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text)))*0.8 + "";
+                                return;
+                            }
+                            else
+                            {
+                                if ( NodeHoaDon.data.douong.Promotion == 2 )
+                                {
+                                    lblPriceOrder.Text = (num * double.Parse(Get_Price(txtIDOrder.Text)))*0.7 + "";
+                                    return;
+                                }
+                                else
+                                {
+                                    lblPriceOrder.Text = num * double.Parse(Get_Price(txtIDOrder.Text)) + "";
+                                    return;
+                                }
+                            }
+                        }
+                        NodeHoaDon = NodeHoaDon.pNext;
+                    }
+                }
             }
         }
 
