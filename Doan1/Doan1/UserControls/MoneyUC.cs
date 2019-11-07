@@ -181,5 +181,27 @@ namespace Doan1
                 PrintNode = PrintNode.pNext;
             }                
         }
+
+        private void btnExportPrice_Click(object sender, EventArgs e)
+        {
+            FileStream fw = null;
+            string msg = "";
+            byte[] msgByte = null;
+
+            fw = new FileStream("Price.txt", FileMode.Create);
+
+            msgByte = Encoding.Default.GetBytes(msg);
+            fw.Write(msgByte, 0, msgByte.Length);
+            msg = "";
+
+            msg += txbMoney.Text + "\r\n";
+
+            msgByte = Encoding.Default.GetBytes(msg);
+            fw.Write(msgByte, 0, msgByte.Length);
+
+            if (fw != null) fw.Close();
+
+            MessageBox.Show("The file Price.txt have created!");
+        }
     }
 }

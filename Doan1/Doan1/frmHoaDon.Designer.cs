@@ -34,12 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalBill = new System.Windows.Forms.Label();
             this.btnExportFile = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblIDBill = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(13, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
@@ -48,7 +50,7 @@
             // lblNameCusBill
             // 
             this.lblNameCusBill.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNameCusBill.Location = new System.Drawing.Point(101, 9);
+            this.lblNameCusBill.Location = new System.Drawing.Point(101, 35);
             this.lblNameCusBill.Name = "lblNameCusBill";
             this.lblNameCusBill.Size = new System.Drawing.Size(240, 23);
             this.lblNameCusBill.TabIndex = 1;
@@ -56,7 +58,7 @@
             // 
             // txtBill
             // 
-            this.txtBill.Location = new System.Drawing.Point(12, 51);
+            this.txtBill.Location = new System.Drawing.Point(12, 77);
             this.txtBill.Multiline = true;
             this.txtBill.Name = "txtBill";
             this.txtBill.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -66,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 179);
+            this.label2.Location = new System.Drawing.Point(13, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 3;
@@ -75,7 +77,7 @@
             // lblTotalBill
             // 
             this.lblTotalBill.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotalBill.Location = new System.Drawing.Point(101, 174);
+            this.lblTotalBill.Location = new System.Drawing.Point(101, 200);
             this.lblTotalBill.Name = "lblTotalBill";
             this.lblTotalBill.Size = new System.Drawing.Size(240, 23);
             this.lblTotalBill.TabIndex = 1;
@@ -86,7 +88,7 @@
             this.btnExportFile.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnExportFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExportFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportFile.Location = new System.Drawing.Point(266, 209);
+            this.btnExportFile.Location = new System.Drawing.Point(266, 235);
             this.btnExportFile.Name = "btnExportFile";
             this.btnExportFile.Size = new System.Drawing.Size(75, 40);
             this.btnExportFile.TabIndex = 4;
@@ -94,11 +96,30 @@
             this.btnExportFile.UseVisualStyleBackColor = false;
             this.btnExportFile.Click += new System.EventHandler(this.btnExportFile_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "ID Bill:";
+            // 
+            // lblIDBill
+            // 
+            this.lblIDBill.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIDBill.Location = new System.Drawing.Point(101, 3);
+            this.lblIDBill.Name = "lblIDBill";
+            this.lblIDBill.Size = new System.Drawing.Size(240, 23);
+            this.lblIDBill.TabIndex = 6;
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 261);
+            this.ClientSize = new System.Drawing.Size(364, 294);
+            this.Controls.Add(this.lblIDBill);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnExportFile);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBill);
@@ -121,5 +142,7 @@
         public System.Windows.Forms.Label lblNameCusBill;
         public System.Windows.Forms.Label lblTotalBill;
         public System.Windows.Forms.TextBox txtBill;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblIDBill;
     }
 }

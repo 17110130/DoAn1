@@ -31,17 +31,17 @@
             this.txbPromotions = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnExportPromotion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbPromotions
             // 
             this.txbPromotions.BackColor = System.Drawing.Color.SandyBrown;
-            this.txbPromotions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbPromotions.Location = new System.Drawing.Point(0, 27);
             this.txbPromotions.Multiline = true;
             this.txbPromotions.Name = "txbPromotions";
             this.txbPromotions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txbPromotions.Size = new System.Drawing.Size(353, 234);
+            this.txbPromotions.Size = new System.Drawing.Size(353, 203);
             this.txbPromotions.TabIndex = 0;
             // 
             // label1
@@ -62,11 +62,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Note";
             // 
+            // btnExportPromotion
+            // 
+            this.btnExportPromotion.BackColor = System.Drawing.SystemColors.Control;
+            this.btnExportPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExportPromotion.Location = new System.Drawing.Point(259, 235);
+            this.btnExportPromotion.Name = "btnExportPromotion";
+            this.btnExportPromotion.Size = new System.Drawing.Size(75, 23);
+            this.btnExportPromotion.TabIndex = 2;
+            this.btnExportPromotion.Text = "Export File";
+            this.btnExportPromotion.UseVisualStyleBackColor = false;
+            this.btnExportPromotion.Click += new System.EventHandler(this.btnExportPromotion_Click);
+            // 
             // PromotionsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SandyBrown;
+            this.Controls.Add(this.btnExportPromotion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbPromotions);
@@ -82,5 +95,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txbPromotions;
+        private System.Windows.Forms.Button btnExportPromotion;
     }
 }

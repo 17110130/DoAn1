@@ -34,5 +34,27 @@ namespace Doan1
                 NodeMenu = NodeMenu.pNext;
             }
         }
+
+        private void btnExportMenu_Click(object sender, EventArgs e)
+        {
+            FileStream fw = null;
+            string msg = "";
+            byte[] msgByte = null;
+
+            fw = new FileStream("Menu.txt", FileMode.Create);
+
+            msgByte = Encoding.Default.GetBytes(msg);
+            fw.Write(msgByte, 0, msgByte.Length);
+            msg = "";
+
+            msg += txbMenu.Text + "\r\n";
+
+            msgByte = Encoding.Default.GetBytes(msg);
+            fw.Write(msgByte, 0, msgByte.Length);
+
+            if (fw != null) fw.Close();
+
+            MessageBox.Show("The file Menu.txt have created!");
+        }
     }
 }

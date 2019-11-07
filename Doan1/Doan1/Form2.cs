@@ -321,7 +321,14 @@ namespace Doan1
             frmHoaDon = new frmHoaDon();
          
             frmHoaDon.Width = 400;
-            frmHoaDon.Height = 300;
+            frmHoaDon.Height = 400;
+
+            if (hoadon == null )
+            {
+                MessageBox.Show("Mời bạn order đồ uống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            frmHoaDon.lblIDBill.Text = hoadon.IdHD + "";
             frmHoaDon.lblNameCusBill.Text = txtNameCusOrder.Text;
             frmHoaDon.txtBill.Text = Show_Textbox() + "\r\n";
             frmHoaDon.lblTotalBill.Text = lblTotalOrder.Text + "";

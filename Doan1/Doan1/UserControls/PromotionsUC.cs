@@ -34,5 +34,27 @@ namespace Doan1
                 NodeMenu = NodeMenu.pNext;
             }
         }
+
+        private void btnExportPromotion_Click(object sender, EventArgs e)
+        {
+            FileStream fw = null;
+            string msg = "";
+            byte[] msgByte = null;
+
+            fw = new FileStream("Promotion.txt", FileMode.Create);
+
+            msgByte = Encoding.Default.GetBytes(msg);
+            fw.Write(msgByte, 0, msgByte.Length);
+            msg = "";
+
+            msg += txbPromotions.Text + "\r\n";
+
+            msgByte = Encoding.Default.GetBytes(msg);
+            fw.Write(msgByte, 0, msgByte.Length);
+
+            if (fw != null) fw.Close();
+
+            MessageBox.Show("The file Promotion.txt have created!");
+        }
     }
 }

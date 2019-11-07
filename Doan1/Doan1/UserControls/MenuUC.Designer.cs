@@ -31,17 +31,17 @@
             this.txbMenu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnExportMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbMenu
             // 
             this.txbMenu.BackColor = System.Drawing.Color.SandyBrown;
-            this.txbMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txbMenu.Location = new System.Drawing.Point(0, 27);
             this.txbMenu.Multiline = true;
             this.txbMenu.Name = "txbMenu";
             this.txbMenu.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txbMenu.Size = new System.Drawing.Size(353, 234);
+            this.txbMenu.Size = new System.Drawing.Size(353, 201);
             this.txbMenu.TabIndex = 0;
             // 
             // label1
@@ -62,11 +62,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
             // 
+            // btnExportMenu
+            // 
+            this.btnExportMenu.BackColor = System.Drawing.SystemColors.Control;
+            this.btnExportMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExportMenu.Location = new System.Drawing.Point(246, 234);
+            this.btnExportMenu.Name = "btnExportMenu";
+            this.btnExportMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnExportMenu.TabIndex = 2;
+            this.btnExportMenu.Text = "Export File";
+            this.btnExportMenu.UseVisualStyleBackColor = false;
+            this.btnExportMenu.Click += new System.EventHandler(this.btnExportMenu_Click);
+            // 
             // MenuUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SandyBrown;
+            this.Controls.Add(this.btnExportMenu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbMenu);
@@ -82,5 +95,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txbMenu;
+        public System.Windows.Forms.Button btnExportMenu;
     }
 }

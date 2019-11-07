@@ -32,9 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnIncrease = new System.Windows.Forms.Button();
-            this.btnDecrease = new System.Windows.Forms.Button();
             this.btnDefault = new System.Windows.Forms.Button();
+            this.btnDecrease = new System.Windows.Forms.Button();
+            this.btnIncrease = new System.Windows.Forms.Button();
+            this.btnExportPrice = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.txbMoney.Multiline = true;
             this.txbMoney.Name = "txbMoney";
             this.txbMoney.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txbMoney.Size = new System.Drawing.Size(353, 198);
+            this.txbMoney.Size = new System.Drawing.Size(353, 205);
             this.txbMoney.TabIndex = 0;
             // 
             // label1
@@ -68,6 +69,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExportPrice);
             this.panel1.Controls.Add(this.btnDefault);
             this.panel1.Controls.Add(this.btnDecrease);
             this.panel1.Controls.Add(this.btnIncrease);
@@ -77,23 +79,23 @@
             this.panel1.Size = new System.Drawing.Size(353, 35);
             this.panel1.TabIndex = 2;
             // 
-            // btnIncrease
+            // btnDefault
             // 
-            this.btnIncrease.BackColor = System.Drawing.SystemColors.Control;
-            this.btnIncrease.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIncrease.Location = new System.Drawing.Point(29, 6);
-            this.btnIncrease.Name = "btnIncrease";
-            this.btnIncrease.Size = new System.Drawing.Size(82, 23);
-            this.btnIncrease.TabIndex = 0;
-            this.btnIncrease.Text = "Increase";
-            this.btnIncrease.UseVisualStyleBackColor = false;
-            this.btnIncrease.Click += new System.EventHandler(this.btnIncrease_Click);
+            this.btnDefault.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDefault.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDefault.Location = new System.Drawing.Point(183, 7);
+            this.btnDefault.Name = "btnDefault";
+            this.btnDefault.Size = new System.Drawing.Size(82, 23);
+            this.btnDefault.TabIndex = 0;
+            this.btnDefault.Text = "Default";
+            this.btnDefault.UseVisualStyleBackColor = false;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
             // btnDecrease
             // 
             this.btnDecrease.BackColor = System.Drawing.SystemColors.Control;
             this.btnDecrease.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDecrease.Location = new System.Drawing.Point(135, 7);
+            this.btnDecrease.Location = new System.Drawing.Point(94, 6);
             this.btnDecrease.Name = "btnDecrease";
             this.btnDecrease.Size = new System.Drawing.Size(82, 23);
             this.btnDecrease.TabIndex = 0;
@@ -101,17 +103,29 @@
             this.btnDecrease.UseVisualStyleBackColor = false;
             this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
             // 
-            // btnDefault
+            // btnIncrease
             // 
-            this.btnDefault.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDefault.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDefault.Location = new System.Drawing.Point(236, 7);
-            this.btnDefault.Name = "btnDefault";
-            this.btnDefault.Size = new System.Drawing.Size(82, 23);
-            this.btnDefault.TabIndex = 0;
-            this.btnDefault.Text = "Default";
-            this.btnDefault.UseVisualStyleBackColor = false;
-            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
+            this.btnIncrease.BackColor = System.Drawing.SystemColors.Control;
+            this.btnIncrease.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIncrease.Location = new System.Drawing.Point(6, 6);
+            this.btnIncrease.Name = "btnIncrease";
+            this.btnIncrease.Size = new System.Drawing.Size(82, 23);
+            this.btnIncrease.TabIndex = 0;
+            this.btnIncrease.Text = "Increase";
+            this.btnIncrease.UseVisualStyleBackColor = false;
+            this.btnIncrease.Click += new System.EventHandler(this.btnIncrease_Click);
+            // 
+            // btnExportPrice
+            // 
+            this.btnExportPrice.BackColor = System.Drawing.SystemColors.Control;
+            this.btnExportPrice.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExportPrice.Location = new System.Drawing.Point(270, 7);
+            this.btnExportPrice.Name = "btnExportPrice";
+            this.btnExportPrice.Size = new System.Drawing.Size(75, 23);
+            this.btnExportPrice.TabIndex = 3;
+            this.btnExportPrice.Text = "Export File";
+            this.btnExportPrice.UseVisualStyleBackColor = false;
+            this.btnExportPrice.Click += new System.EventHandler(this.btnExportPrice_Click);
             // 
             // MoneyUC
             // 
@@ -139,5 +153,6 @@
         private System.Windows.Forms.Button btnDefault;
         private System.Windows.Forms.Button btnDecrease;
         private System.Windows.Forms.Button btnIncrease;
+        public System.Windows.Forms.Button btnExportPrice;
     }
 }
